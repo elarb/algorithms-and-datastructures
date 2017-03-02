@@ -6,20 +6,6 @@ package com.elar.algorithms.data_structures.interfaces;
 public interface Queue<E> {
 
   /**
-   * Returns the number of elements in the stack.
-   *
-   * @return number of elements in the stack
-   */
-  int size();
-
-  /**
-   * Checks whether the stack is empty.
-   *
-   * @return true if the stack is empty, false otherwise
-   */
-  boolean isEmpty();
-
-  /**
    * Inserts an element at the rear of the queue.
    *
    * @param e element to be inserted
@@ -61,4 +47,18 @@ public interface Queue<E> {
    * @return value from the tail of the queue.
    */
   public E peek();
+
+  /**
+   * Returns the number of elements in the stack.
+   *
+   * @return number of elements in the stack
+   */
+  int size();
+
+  /**
+   * Checks whether the stack is empty.
+   *
+   * @return true if the stack is empty, false otherwise
+   */
+  boolean isEmpty();
 }
