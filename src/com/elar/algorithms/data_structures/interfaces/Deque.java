@@ -1,5 +1,8 @@
 package com.elar.algorithms.data_structures.interfaces;
 
+/**
+ * A queue-like data structure that supports insertion and deletion at both the front and the back of the queue.
+ */
 public interface Deque<E> {
 
   /**

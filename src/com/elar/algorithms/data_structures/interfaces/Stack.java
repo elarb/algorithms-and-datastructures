@@ -1,5 +1,8 @@
 package com.elar.algorithms.data_structures.interfaces;
 
+/**
+ * A collection of objects that are inserted and removed according to the last-in, first-out (LIFO) principle.
+ */
 public interface Stack<E> {
 
   /**

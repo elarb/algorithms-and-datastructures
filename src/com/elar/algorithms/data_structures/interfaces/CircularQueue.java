@@ -1,5 +1,6 @@
 package com.elar.algorithms.data_structures.interfaces;
 
+
 public interface CircularQueue<E> extends Queue<E> {
 
   /**

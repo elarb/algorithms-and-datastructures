@@ -39,7 +39,6 @@ public class ArrayList<E> implements List<E> {
    * @return element at index i
    * @throws IndexOutOfBoundsException if no such index exists
    */
-  @Override
   public E get(int i) throws IndexOutOfBoundsException {
     return null;
   }
@@ -52,7 +51,6 @@ public class ArrayList<E> implements List<E> {
    * @return the replaced element
    * @throws IndexOutOfBoundsException if no such index exists
    */
-  @Override
   public E set(int i, E e) throws IndexOutOfBoundsException {
     return null;
   }

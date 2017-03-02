@@ -34,31 +34,6 @@ public class SinglyLinkedList<E> implements List<E> {
   }
 
   /**
-   * Returns the element at index i.
-   *
-   * @param i index of the element
-   * @return element at index i
-   * @throws IndexOutOfBoundsException if no such index exists
-   */
-  @Override
-  public E get(int i) throws IndexOutOfBoundsException {
-    return null;
-  }
-
-  /**
-   * Replaces the element at index i with e and returns the replaced element.
-   *
-   * @param i index to be replaced by e
-   * @param e element to be inserted at index i
-   * @return the replaced element
-   * @throws IndexOutOfBoundsException if no such index exists
-   */
-  @Override
-  public E set(int i, E e) throws IndexOutOfBoundsException {
-    return null;
-  }
-
-  /**
    * Inserts element e to the end of the list.
    *
    * @param e element to be added.
