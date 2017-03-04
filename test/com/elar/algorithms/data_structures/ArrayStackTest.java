@@ -2,9 +2,7 @@ package com.elar.algorithms.data_structures;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayStackTest {
 
@@ -43,7 +41,7 @@ class ArrayStackTest {
     ArrayStack<Integer> stack = new ArrayStack<>();
     stack.push(1);
     stack.push(2);
-    assertTrue(stack.top() == 2);
+    assertTrue(stack.peek() == 2);
   }
 
   @Test
@@ -70,7 +68,6 @@ class ArrayStackTest {
     stack.pop();
     assertTrue(stack.isEmpty());
   }
-
 
   @Test
   @SuppressWarnings("unchecked")

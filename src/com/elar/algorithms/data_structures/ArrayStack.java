@@ -18,25 +18,26 @@ public class ArrayStack<E> implements Stack<E> {
   }
 
   /**
-   * Insert an element at the top of the stack.
+   * Insert an element at the top of the Stack.
    *
    * @param e the element to be inserted
    */
   @Override
   public void push(E e) {
-    if (size >= capacity) {
+    if (isFull())
       grow();
-    }
+
     data[size++] = e;
   }
 
   /**
-   * Returns the element at the top of the stack.
+   * Returns the element at the top of the Stack.
    *
-   * @return element at the top of the stack (or null if empty)
+   * @return element at the top of the Stack
+   * @throws EmptyStackException if the Stack is empty
    */
   @Override
-  public E top() throws EmptyStackException {
+  public E peek() throws EmptyStackException {
     if (size <= 0) {
       throw new EmptyStackException();
     }
@@ -44,9 +45,10 @@ public class ArrayStack<E> implements Stack<E> {
   }
 
   /**
-   * Removes and returns the top element from the stack.
+   * Removes and returns the top element from the Stack.
    *
-   * @return element to be removed (or null if empty)
+   * @return element at the top of the Stack
+   * @throws EmptyStackException if the Stack is empty
    */
   @Override
   public E pop() throws EmptyStackException {
@@ -64,9 +66,9 @@ public class ArrayStack<E> implements Stack<E> {
   }
 
   /**
-   * Returns the number of elements in the stack.
+   * Returns the number of elements in the Stack.
    *
-   * @return number of elements in the stack
+   * @return number of elements in the Stack
    */
   @Override
   public int size() {
@@ -74,9 +76,9 @@ public class ArrayStack<E> implements Stack<E> {
   }
 
   /**
-   * Checks whether the stack is empty.
+   * Checks whether the Stack is empty.
    *
-   * @return true if the stack is empty, false otherwise
+   * @return true if the Stack is empty, false otherwise
    */
   @Override
   public boolean isEmpty() {
@@ -111,14 +113,14 @@ public class ArrayStack<E> implements Stack<E> {
   // Grow the array by 50%
   @SuppressWarnings("unchecked")
   private void grow() {
-    capacity = 2 * size;
+    capacity = 2 * capacity;
     data = Arrays.copyOf(data, capacity);
   }
 
   // Shrink the array by 50%
   @SuppressWarnings("unchecked")
   private void shrink() {
-    capacity = size == 0 ? 2 : size / 2;
+    capacity = size == 0 ? 2 : capacity / 2;
     data = Arrays.copyOf(data, capacity);
   }
 
