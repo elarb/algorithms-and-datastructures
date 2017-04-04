@@ -1,4 +1,4 @@
-algorithms-and-datastructures
+Algorithms and Data Structures
 ==============================
 
 Algorithms & Data Structures implemented in Java.
@@ -13,7 +13,7 @@ Algorithms & Data Structures implemented in Java.
 - [X]  List
 - [ ]  Matrix
 - [ ]  Queue 
-- [ ]  Stack
+- [X]  Stack
 
 
 ## Mathematics
@@ -52,27 +52,12 @@ Algorithms & Data Structures implemented in Java.
     - [ ]  using right shift and modulus
     - [ ]  using BigDecimal
 
-## Path
-* Find shortest path(s) in a Graph from a starting Vertex
-  - [ ]  Dijkstra's algorithm (non-negative weight graphs)
-  - [ ]  Bellman-Ford algorithm (negative and positive weight graphs)
-* Find minimum spanning tree
-  - [ ]  Prim's (undirected graphs)
-* Find all pairs shortest path
-  - [ ]  Johnsons's algorithm (negative and positive weight graphs)
-  - [ ]  Floyd-Warshall (negative and positive weight graphs)
-* Cycle detection
-  - [ ]  Depth first search while keeping track of visited Verticies
-- [ ]  Topological sort
-- [ ]  A* path finding algorithm
-
 ## Search
 * Get index of value in array
   - [ ]  Linear
   - [ ]  Quickselect
   - [ ]  Binary [sorted array input only]
   - [ ]  Optimized binary (binary until a threashold then linear) [sorted array input only]
-  - [ ]  Interpolation [sorted array input only]
 
 ## Sequences
 - [ ]  Find longest common subsequence (dynamic programming)
@@ -97,6 +82,7 @@ Algorithms & Data Structures implemented in Java.
 - [ ]  Shell's Sort
 
 ## String Functions
+- [X] Permutations of a string
 * Reverse characters in a string
   - [ ]  using additional storage (a String or StringBuilder)
   - [ ]  using in-place swaps
@@ -111,3 +97,31 @@ Algorithms & Data Structures implemented in Java.
   - [ ]  using in-place symetric element compares
 - [ ]  Subsets of characters in a String
 - [ ]  Edit (Levenshtein) Distance of two Strings
+
+## Graphs
+* Find shortest path(s) in a Graph from a starting Vertex
+  - [ ] Dijkstra's algorithm (non-negative weight graphs)
+  - [ ] Bellman-Ford algorithm (negative and positive weight graphs)
+* Find minimum spanning tree
+  - [ ] Prim's (undirected graphs)
+  - [ ] Kruskal's (undirected graphs)
+* Cycle detection
+  - [ ] Depth first search while keeping track of visited Vertices
+- [ ] Topological sort
+* Graph Traversal
+  - [ ] Depth First Traversal  
+  - [ ] Breath First Traversal
+  
+## Path
+* Find shortest path(s) in a Graph from a starting Vertex
+- [ ]  Dijkstra's algorithm (non-negative weight graphs)
+- [ ]  Bellman-Ford algorithm (negative and positive weight graphs)
+* Find minimum spanning tree
+- [ ]  Prim's (undirected graphs)
+* Find all pairs shortest path
+- [ ]  Johnsons's algorithm (negative and positive weight graphs)
+- [ ]  Floyd-Warshall (negative and positive weight graphs)
+* Cycle detection
+- [ ]  Depth first search while keeping track of visited Verticies
+- [ ]  Topological sort
+- [ ]  A* path finding algorithm
