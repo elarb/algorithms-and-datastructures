@@ -73,12 +73,13 @@ Algorithms & Data Structures implemented in Java.
 
 ## Sorts
 - [ ]  Bubble Sort
-- [ ]  Counting Sort (Integers only)
+- [ ]  Counting Sort
 - [ ]  Heap Sort
 - [ ]  Insertion Sort
+- [X]  Selection Sort
 - [ ]  Merge Sort
-- [ ]  Quick Sort
-- [ ]  Radix Sort (Integers only)
+- [X]  Quick Sort  
+- [ ]  Radix Sort
 - [ ]  Shell's Sort
 
 ## String Functions
