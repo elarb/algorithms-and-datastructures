@@ -1,30 +1,19 @@
 package com.elar.algorithms.strings;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class MaxNumNDigitsTest {
 
-    //Todo: use parameterized tests here
-
-    @Test
-    public void test_max_with_one() {
-        assertEquals(2, MaxNumNDigits.maxDigit("21", 1));
-    }
-
-    @Test
-    public void test_max_with_one_reversed() {
-        assertEquals(2, MaxNumNDigits.maxDigit("12", 1));
-    }
-
-    @Test
-    public void test_max_with_two() {
-        assertEquals(21, MaxNumNDigits.maxDigit("21", 2));
-    }
-
-    @Test
-    public void test_max_with_three() {
-        assertEquals(21, MaxNumNDigits.maxDigit("12", 3));
+    @ParameterizedTest(name = "Original number: {0}. Max only using {1} digit(s): {2}")
+    @CsvSource({
+            "21, 1, 2",
+            "12, 1, 2",
+            "21, 2, 21",
+            "12, 3, 21"})
+    public void test_max_num_digits(String number, int max, int expected) {
+        assertThat(MaxNumNDigits.maxDigit(number, max)).isEqualTo(expected);
     }
 }
