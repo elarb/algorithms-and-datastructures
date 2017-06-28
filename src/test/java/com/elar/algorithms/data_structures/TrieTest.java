@@ -19,7 +19,8 @@ class TrieTest {
             "test",
             "Hackerrrank",
             "Hackerrankk",
-            "a");
+            "a"
+    );
 
     @BeforeEach
     void setUp() {

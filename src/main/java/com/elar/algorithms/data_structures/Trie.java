@@ -21,11 +21,15 @@ public class Trie {
      * @param word the word to be inserted
      */
     public void insert(String word) {
+        if (word.isEmpty())
+            return;
         Node current = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
+            current.size++;
             current = current.children.computeIfAbsent(c, k -> new Node());
         }
+        current.size++;
         current.isCompleteWord = true;
     }
 
@@ -48,6 +52,7 @@ public class Trie {
             return;
         }
         char c = word.charAt(index);
+        current.size++;
         Node node = current.children.computeIfAbsent(c, k -> new Node());
         insertRecursive(node, word, index + 1);
     }
@@ -136,29 +141,28 @@ public class Trie {
      * @return the number of complete words in the trie
      */
     public int size() {
-        return size(root);
+        return root.size;
     }
 
-    /**
-     * Number of complete words contained in the sub-trie with node as root.
-     *
-     * @param node root of the sub-trie
-     * @return number of complete words contained in the sub-trie
-     */
-    private int size(Node node) {
-        int count = 0;
-        if (node.isCompleteWord)
-            count += 1;
-
-        if (node.children.isEmpty())
-            return count;
-
-        for (Node child : node.children.values()) {
-            count += size(child);
-        }
-        return count;
-    }
-
+    //    /**
+//     * Number of complete words contained in the sub-trie with node as root.
+//     *
+//     * @param node root of the sub-trie
+//     * @return number of complete words contained in the sub-trie
+//     */
+//    private int size(Node node) {
+//        int count = 0;
+//        if (node.isCompleteWord)
+//            count += 1;
+//
+//        if (node.children.isEmpty())
+//            return count;
+//
+//        for (Node child : node.children.values()) {
+//            count += size(child);
+//        }
+//        return count;
+//    }
     public int countWithPrefix(String prefix) {
         Node current = root;
         for (int i = 0; i < prefix.length(); i++) {
@@ -170,7 +174,7 @@ public class Trie {
             current = next;
         }
         // `current` should now be the sub-tree containing words starting with `prefix`
-        return size(current);
+        return current.size;
     }
 
     /**
@@ -179,10 +183,12 @@ public class Trie {
     private static class Node {
         Map<Character, Node> children;
         boolean isCompleteWord;
+        int size;
 
         Node() {
             children = new HashMap<>();
             isCompleteWord = false;
+            size = 0;
         }
     }
 
