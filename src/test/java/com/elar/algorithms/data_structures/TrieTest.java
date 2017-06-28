@@ -2,11 +2,14 @@ package com.elar.algorithms.data_structures;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class TrieTest {
 
@@ -26,36 +29,35 @@ class TrieTest {
         }
     }
 
-    //Todo: Need newer version of Junit5
-//    @ParameterizedTest
-//    @MethodSource(names = "testDataProvider")
-//    void test_contains(String word) {
-//        assertTrue(trie.search(word));
-//    }
+    @ParameterizedTest
+    @MethodSource(names = "testDataProvider")
+    void test_contains(String word) {
+        assertThat(trie.search(word)).isTrue();
+    }
 
     @Test
     void test_does_not_contain() {
-        assertFalse(trie.search("b"));
+        assertThat(trie.search("b")).isFalse();
     }
 
     @Test
     void test_correct_size() {
-        assertEquals(5, trie.size());
+        assertThat(trie.size()).isEqualTo(5);
     }
 
     @Test
     void test_prefix_single() {
-        assertEquals(0, trie.countWithPrefix("none"));
+        assertThat(trie.countWithPrefix("a")).isEqualTo(1);
     }
 
     @Test
     void test_prefix_multiple() {
-        assertEquals(3, trie.countWithPrefix("Hack"));
+        assertThat(trie.countWithPrefix("Hack")).isEqualTo(3);
     }
 
     @Test
     void test_prefix_count_none() {
-        assertEquals(1, trie.countWithPrefix("a"));
+        assertThat(trie.countWithPrefix("none")).isEqualTo(0);
     }
 
     static Stream<String> testDataProvider() {
