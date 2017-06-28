@@ -14,6 +14,7 @@ Algorithms & Data Structures implemented in Java.
 - [ ]  Matrix
 - [ ]  Queue 
 - [X]  Stack
+- [X]  Trie 
 
 
 ## Mathematics
